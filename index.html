@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>戦争反対・今こそ声を上げよう</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@700&display=swap');
+  :root{--black:#0a0a0a;--white:#f5f0e8;--red:#cc2200;--yellow:#f5c800;--green:#1a6b3c;--gray:#2a2a2a;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--black);color:var(--white);font-family:'Noto Sans JP',sans-serif;line-height:1.7;}
+  header{background:var(--black);border-bottom:4px solid var(--red);padding:1.5rem 1rem;text-align:center;position:relative;overflow:hidden;}
+  header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(204,34,0,0.05) 10px,rgba(204,34,0,0.05) 20px);}
+  .header-img{width:100%;max-height:260px;object-fit:contain;display:block;margin:0 auto 1rem;position:relative;}
+  .header-3col{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:0.8rem;align-items:center;margin:0.8rem auto;max-width:700px;position:relative;}
+  .header-3col .col-center{text-align:center;}
+  .header-3col img{width:100%;max-height:140px;object-fit:contain;display:block;margin:0 auto;}
+  header p.tagline{font-size:1rem;color:var(--yellow);margin-top:0.4rem;font-weight:700;position:relative;}
+  section{max-width:900px;margin:0 auto;padding:2.5rem 1rem;border-bottom:1px solid #333;}
+  h2.section-title{font-family:'Oswald','Noto Sans JP',sans-serif;font-size:clamp(1.3rem,4vw,2rem);color:var(--yellow);border-left:6px solid var(--red);padding-left:0.8rem;margin-bottom:1.5rem;letter-spacing:0.05em;}
+  h3.sub-title{font-size:1.05rem;color:var(--red);font-weight:700;margin:2rem 0 0.8rem;padding-bottom:0.3rem;border-bottom:1px dashed #444;}
+  .video-wrap{width:100%;margin:0.8rem 0;border:2px solid #333;border-radius:4px;overflow:hidden;background:#000;}
+  .video-wrap video{width:100%;max-height:460px;display:block;}
+  .video-caption{background:#111;padding:0.4rem 0.8rem;font-size:0.82rem;color:#aaa;}
+  .img-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:0.8rem;margin:0.8rem 0;}
+  .img-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin:0.8rem 0;}
+  .img-grid-4{display:grid;grid-template-columns:repeat(2,1fr);gap:0.8rem;margin:0.8rem 0;}
+  @media(max-width:600px){.img-grid-2{grid-template-columns:1fr;}.img-grid-3{grid-template-columns:repeat(2,1fr);}.img-grid-4{grid-template-columns:1fr;}.header-3col{grid-template-columns:1fr;}}
+  .img-card{border:2px solid #333;border-radius:4px;overflow:hidden;}
+  .img-card img{width:100%;object-fit:cover;display:block;}
+  .img-card .caption{background:#111;padding:0.4rem 0.8rem;font-size:0.82rem;color:#ccc;}
+  .img-single{margin:0.8rem 0;border:2px solid #333;border-radius:4px;overflow:hidden;}
+  .img-single img{width:100%;max-height:500px;object-fit:contain;display:block;background:#000;cursor:pointer;}
+  .img-single .caption{background:#111;padding:0.4rem 0.8rem;font-size:0.82rem;color:#ccc;}
+  .video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0.8rem;margin:0.8rem 0;}
+  .text-block{background:#111;border-left:4px solid var(--red);padding:1rem 1.2rem;margin:0.8rem 0;font-size:0.93rem;line-height:1.8;}
+  .demo-banner{background:var(--green);border:4px solid var(--yellow);margin:1.5rem auto;max-width:800px;border-radius:4px;overflow:hidden;display:flex;align-items:center;flex-wrap:wrap;}
+  .demo-banner img{width:260px;object-fit:cover;flex-shrink:0;}
+  .demo-banner-text{padding:1.2rem;flex:1;min-width:200px;}
+  .demo-banner-text h2{font-size:1.4rem;color:var(--yellow);font-weight:900;margin-bottom:0.4rem;}
+  .demo-banner-text p{font-size:0.9rem;margin-bottom:0.3rem;}
+  .demo-banner-text a{display:inline-block;margin-top:0.6rem;background:var(--yellow);color:var(--black);padding:0.4rem 1rem;font-weight:900;text-decoration:none;border-radius:2px;font-size:0.88rem;}
+  .call-banner{background:var(--red);border:3px solid var(--yellow);border-radius:4px;padding:1rem 1.2rem;margin:1.2rem 0;text-align:center;}
+  .call-banner p:first-child{font-size:1.2rem;font-weight:900;color:var(--yellow);margin-bottom:0.3rem;}
+  .call-banner p:last-child{font-size:0.95rem;color:#fff;font-weight:700;}
+  .link-btn{display:inline-block;background:var(--gray);border:2px solid var(--yellow);border-radius:4px;padding:0.7rem 1.4rem;text-decoration:none;color:var(--white);font-weight:700;font-size:0.95rem;margin:0.4rem 0.3rem;}
+  .link-btn:hover{background:#3a3a3a;}
+  .page-link-box{background:#111;border:2px solid var(--red);border-radius:4px;padding:1.2rem;margin:1rem 0;text-align:center;}
+  .page-link-box p{color:#bbb;font-size:0.9rem;margin-bottom:0.6rem;}
+  .page-link-box a{display:inline-block;background:var(--red);color:#fff;padding:0.6rem 1.5rem;font-weight:900;text-decoration:none;border-radius:4px;font-size:1rem;}
+  footer{text-align:center;padding:2.5rem 1rem;color:#555;font-size:0.82rem;border-top:4px solid var(--red);}
+  footer .tags{color:var(--red);font-weight:700;font-size:0.95rem;margin-bottom:0.4rem;}
+  @media(max-width:600px){.demo-banner{flex-direction:column;}.demo-banner img{width:100%;}}
+  /* 全国デモリスト */
+  .zenkoku-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin:0.8rem 0;}
+  .zenkoku-list{background:#111;border:2px solid #333;border-radius:4px;padding:1rem;font-size:0.88rem;line-height:2;}
+  .zenkoku-list h3{color:var(--yellow);font-size:1rem;margin-bottom:0.6rem;border-bottom:1px solid #333;padding-bottom:0.4rem;}
+  .zenkoku-list .area{color:#aaa;font-size:0.8rem;}
+  .zenkoku-list .city{color:var(--white);font-weight:700;}
+  /* 日本は報道しない：2×2 */
+  .report-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin:0.8rem 0;}
+  @media(max-width:600px){.report-grid{grid-template-columns:1fr;}.zenkoku-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header>
+  <img class="header-img" src="hear2.jpg" alt="NO WAR HEAR MY VOICE">
+  <!-- 3列：cat | スローガン | dokusai -->
+  <div class="header-3col">
+    <div><img src="cat.png" alt="NO WAR 黒猫"></div>
+    <div class="col-center">
+      <p style="font-family:'Oswald','Noto Sans JP',sans-serif;font-size:clamp(0.9rem,2.2vw,1.4rem);color:var(--white);text-shadow:2px 2px 0 #000;line-height:1.6;">The Power of The People<br>is Greater than the<br>People in Power</p>
+    </div>
+    <div><img src="dokusai.png" alt="独裁者は失せろ"></div>
+  </div>
+  <p style="font-size:clamp(0.8rem,2vw,1rem);color:var(--red);font-weight:900;margin:0.5rem 0 0.2rem;position:relative;">#戦争反対 &nbsp; #改憲反対 &nbsp; #高市やめろ &nbsp; #トランプやめろ</p>
+  <p class="tagline">今こそ声を上げよう ― 全国で反戦の輪が広がっています</p>
+</header>
+
+<!-- デモ案内 -->
+<section>
+  <h2 class="section-title">📢 次のデモ・アクション</h2>
+
+  <!-- 国会前 kokkai 画像 -->
+  <div class="img-single">
+    <img src="kokkai.jpg" alt="平和憲法を守るための緊急アクション 国会正門前">
+  </div>
+
+  <!-- 2列：zenkoku地図 ＋ 全国デモリスト -->
+  <div class="zenkoku-grid">
+    <div class="img-card">
+      <img src="zenkoku.jpg" alt="4/8全国デモ開催地マップ">
+      <div class="caption">4/8（水）全国デモ開催地（3/31 22時時点：17/47都道府県）</div>
+    </div>
+    <div class="zenkoku-list">
+      <h3>【更新】国会前抗議に連帯 全国デモ</h3>
+      <div><span class="area">北海道</span>　<span class="city">札幌、旭川</span></div>
+      <div><span class="area">山形</span>　<span class="city">JR山形駅</span></div>
+      <div><span class="area">栃木</span>　<span class="city">宇都宮駅</span></div>
+      <div><span class="area">群馬</span>　<span class="city">高崎駅</span></div>
+      <div><span class="area">埼玉</span>　<span class="city">大宮</span></div>
+      <div><span class="area">千葉県</span>　<span class="city">JR船橋駅</span></div>
+      <div><span class="area">東京</span>　<span class="city">国会前、日野市高幡不動</span></div>
+      <div><span class="area">東京</span>　<span class="city">三鷹駅</span></div>
+      <div><span class="area">神奈川</span>　<span class="city">小田急相模原、R橋本駅、JR桜木町、あざみ野駅</span></div>   
+      <div><span class="area">富山</span>　<span class="city">富山駅</span></div>
+      <div><span class="area">石川</span>　<span class="city">金沢駅</span></div>
+      <div><span class="area">山梨</span>　<span class="city">甲府駅</span></div>
+      <div><span class="area">長野</span>　<span class="city">松本駅</span></div>
+      <div><span class="area">静岡</span>　<span class="city">静岡駅、JR浜松駅</span></div>
+      <div><span class="area">愛知</span>　<span class="city">名古屋、豊橋</span></div>
+      <div><span class="area">三重</span>　<span class="city">津駅</span></div>
+      <div><span class="area">滋賀</span>　<span class="city">JR草津、JR膳所</span></div>
+      <div><span class="area">京都</span>　<span class="city">四条河原町</span></div>  
+      <div><span class="area">大阪</span>　<span class="city">梅田</span></div>
+      <div><span class="area">兵庫</span>　<span class="city">明石駅、三宮</span></div>
+      <div><span class="area">奈良</span>　<span class="city">JR奈良</span></div>
+      <div><span class="area">和歌山</span>　<span class="city">和歌山駅</span></div>
+      <div><span class="area">岡山</span>　<span class="city">岡山駅</span></div>
+      <div><span class="area">広島</span>　<span class="city">広島市</span></div>
+      <div><span class="area">福岡</span>　<span class="city">久留米</span></div>
+      <div><span class="area">愛媛</span>　<span class="city">松山市駅</span></div>
+      <div><span class="area">福岡</span>　<span class="city">久留米駅</span></div>
+      <div><span class="area">長崎</span>　<span class="city">長崎駅</span></div>
+      <div><span class="area">宮崎</span>　<span class="city">山形屋前</span></div>
+      <div><span class="area">沖縄</span>　<span class="city">沖縄市橋</span></div>
+    </div>
+  </div>
+
+  <!-- 2列：4.4イベント ＋ デモカレンダー -->
+  <div class="img-grid-2" style="margin-top:1.2rem;">
+    <div class="demo-banner" style="margin:0;">
+      <div class="demo-banner-text" style="padding:1rem;">
+        <h2>4月4日（土）新宿ペンライトアクション</h2>
+        <p>📍 新宿駅東南口広場</p>
+        <p>🕡 18:30〜19:30</p>
+        <p>イランと交渉すればいいじゃん。アメリカ追従をやめたらタンカーは通れるよ！</p>
+        <p>主催：イラン攻撃をやめろ！緊急アクション / STOP大軍拡アクション / NAJAT</p>
+      </div>
+    </div>
+    <div class="img-card">
+      <img src="democalendar.png" alt="デモカレンダー">
+      <div class="caption"><a href="https://democalendar.jp/" target="_blank" style="color:#4ea8de;">🗓 デモカレンダーで全国のデモを探す →</a></div>
+    </div>
+  </div>
+
+  <div class="call-banner">
+    <p>友達・家族を誘って、みんなでアクション！</p>
+    <p>📣 拡散希望 ― このページをシェアしてください</p>
+  </div>
+
+  <div class="video-wrap">
+    <video controls preload="metadata"><source src="平和フェス.mp4" type="video/mp4"></video>
+    <div class="video-caption">平和フェス</div>
+  </div>
+  <div class="video-wrap">
+    <video controls preload="metadata"><source src="中国ごめん.mp4" type="video/mp4"></video>
+    <div class="video-caption">中国ごめん</div>
+  </div>
+</section>
+
+<!-- 日本は報道しない -->
+<section>
+  <h2 class="section-title">📺 日本は報道しない</h2>
+  <p style="margin:0.8rem 0;font-size:0.93rem;color:#bbb;">日本国内の反戦デモは、日本のメディアはほとんど報じません。<br>
+  しかし海外メディアやSNSが拾ってくれています。<br>
+  日本の右翼勢力と日本国民は別、と見てくれている。<br><br>
+  韓国のXユーザーはこう言いました。<br>
+  「東京の平和憲法守護集会。日本には極右勢力もあるが、自国内では力が少ない。まるで孤独に戦っているよう。日本の平和勢力の声が大きくなるよう助けたい。そうすれば東アジアに平和が定着できる。」</p>
+  <!-- 2×2グリッドに変更 -->
+  <div class="report-grid">
+    <div class="video-wrap" style="margin:0;">
+      <video controls preload="metadata"><source src="オールドメディア.mp4" type="video/mp4"></video>
+      <div class="video-caption">オールドメディアと報道</div>
+    </div>
+    <div class="img-single" style="margin:0;">
+      <a href="https://x.com/Its_ereko/status/2038278231053189196?s=20" target="_blank">
+        <img src="africa.png" alt="アフリカの反応">
+      </a>
+      <div class="caption">🌍 アフリカの反応 → <a href="https://x.com/Its_ereko/status/2038278231053189196?s=20" target="_blank" style="color:#4ea8de;">X</a></div>
+    </div>
+    <div class="img-single" style="margin:0;">
+      <a href="https://x.com/CgtnJapanese/status/2038521473036648681?s=20" target="_blank">
+        <img src="china.png" alt="中国の反応">
+      </a>
+      <div class="caption">🇨🇳 中国の反応 → <a href="https://x.com/CgtnJapanese/status/2038521473036648681?s=20" target="_blank" style="color:#4ea8de;">X</a></div>
+    </div>
+    <div class="img-single" style="margin:0;">
+      <a href="https://x.com/2muchwaiting/status/2038469696782242152?s=20" target="_blank">
+        <img src="korea.png" alt="韓国の反応">
+      </a>
+      <div class="caption">🇰🇷 韓国の反応 → <a href="https://x.com/2muchwaiting/status/2038469696782242152?s=20" target="_blank" style="color:#4ea8de;">X</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 各地のデモ -->
+<section>
+  <h2 class="section-title">🗾 各地の反戦デモ</h2>
+
+  <div class="img-grid-2">
+    <div class="img-card">
+      <img src="中津川.jpg" alt="岐阜県中津川市">
+      <div class="caption">岐阜県中津川市 ― ペンライトデモ</div>
+    </div>
+    <div class="img-card">
+      <img src="梅田.jpg" alt="大阪・梅田">
+      <div class="caption">大阪・梅田の駅前デモ</div>
+    </div>
+  </div>
+
+  <div class="video-wrap">
+    <video controls preload="metadata"><source src="国会前.mp4" type="video/mp4"></video>
+    <div class="video-caption">国会前（3月25日夜）</div>
+  </div>
+
+  <h3 class="sub-title">オタクによる反戦デモ</h3>
+  <div class="text-block">
+    機動戦士ガンダムやシティーハンターのプロデューサー・植田益朗さん、宮崎駿監督「千と千尋の神隠し」リン役の声優でバンド「渋さ知らズ」メンバーの玉井夕海さんなど、錚々たる方々がスピーチ。
+  </div>
+  <div class="img-grid-2">
+    <div class="img-card">
+      <img src="オタク反戦デモ.jpg" alt="オタクによる反戦デモ">
+      <div class="caption">オタクによる反戦デモ</div>
+    </div>
+    <div class="img-card">
+      <img src="オタク先生.jpg" alt="個性あふれるプラカード">
+      <div class="caption">個性あふれるプラカード</div>
+    </div>
+  </div>
+
+  <div class="img-grid-2">
+    <div class="img-card">
+      <img src="横須賀.jpg" alt="横須賀米軍基地前">
+      <div class="caption">横須賀米軍基地前</div>
+    </div>
+    <div class="img-card">
+      <img src="札幌.jpg" alt="札幌">
+      <div class="caption">札幌 ― ミサイルより米を！</div>
+    </div>
+  </div>
+
+  <div class="video-wrap">
+    <video controls preload="metadata"><source src="名古屋.mp4" type="video/mp4"></video>
+    <div class="video-caption">名古屋の反戦デモ</div>
+  </div>
+</section>
+
+<!-- トランプやめろ -->
+<section>
+  <h2 class="section-title">🇺🇸 トランプやめろ</h2>
+  <!-- 動画を先、Trump画像を後に入れ替え -->
+  <div class="video-grid">
+    <div class="video-wrap">
+      <video controls preload="metadata"><source src="トランプ.mp4" type="video/mp4"></video>
+      <div class="video-caption">トランプ</div>
+    </div>
+    <div class="video-wrap">
+      <video controls preload="metadata"><source src="トランプやめろ.mp4" type="video/mp4"></video>
+      <div class="video-caption">トランプやめろ</div>
+    </div>
+  </div>
+  <div class="img-single">
+    <a href="https://x.com/InfoGram/status/2038475065663345024?s=20" target="_blank">
+      <img src="Trump.png" alt="アメリカ NO KINGSデモ">
+    </a>
+    <div class="caption">アメリカでも700万人がNO KINGSデモ → <a href="https://x.com/InfoGram/status/2038475065663345024?s=20" target="_blank" style="color:#4ea8de;">Xで見る</a></div>
+  </div>
+</section>
+
+<!-- 令和の百姓一揆 -->
+<section>
+  <h2 class="section-title">🌾 令和の百姓一揆</h2>
+  <div class="text-block">
+    【3月29日 第2回令和の百姓一揆】ミサイルより米を！軍事費よりも農業予算を！<br>
+    高橋ひであき「乗っ取りが完了してしまう」無所属連合<br>
+    <a href="https://www.agrinews.co.jp/news/index/371169" target="_blank" style="color:#4ea8de;">農業新聞の記事 →</a>　
+    <a href="https://www.nikkei.com/article/DGXZQOUA170T60X10C26A3000000/" target="_blank" style="color:#4ea8de;">日経新聞・農林中金記事 →</a>
+  </div>
+  <div class="video-wrap">
+    <video controls preload="metadata"><source src="百姓一揆.mp4" type="video/mp4"></video>
+    <div class="video-caption">令和の百姓一揆</div>
+  </div>
+  <div class="text-block">
+    <a href="kenpo.html#hyakusho" style="color:#4ea8de;">▶ その他の動画はこちら →</a>
+  </div>
+</section>
+
+<!-- 憲法改正・スパイ防止法 -->
+<section>
+  <h2 class="section-title">⚠️ 憲法改正・スパイ防止法</h2>
+  <div class="img-grid-2">
+    <div class="img-card">
+      <a href="kenpo.html"><img src="改憲反対１.jpg" alt="改憲反対 NO WAR 戦争禁止"></a>
+      <div class="caption">憲法改正の問題点 → <a href="kenpo.html" style="color:#4ea8de;">詳細を見る</a></div>
+    </div>
+    <div class="img-card">
+      <!-- spy2に差し替え -->
+      <a href="kenpo.html#spy"><img src="spy2.png" alt="現代の治安維持法 SPY防止法"></a>
+      <div class="caption">スパイ防止法 → <a href="kenpo.html#spy" style="color:#4ea8de;">詳細を見る</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 詳細ページへ -->
+<section>
+  <div class="page-link-box">
+    <p>憲法改正・スパイ防止法・高市政権・石油危機の詳細はこちら</p>
+    <a href="kenpo.html">⚠️ 問題点を詳しく見る →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="tags">#戦争反対 &nbsp; #高市やめろ &nbsp; #改憲反対 &nbsp; #反戦デモ</div>
+  <p>各地のデモ情報は <a href="https://democalendar.jp/" target="_blank" style="color:#4ea8de;">デモカレンダー</a> で確認できます</p>
+  <br>
+  <p>このページの動画・画像はX（Twitter）等で拡散されているものを使用しています</p>
+</footer>
+
+</body>
+</html>
